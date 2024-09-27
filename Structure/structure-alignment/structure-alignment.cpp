@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 
-#pragma region  普通结构体
+#pragma region 普通结构体
 
 struct A
 {
@@ -65,9 +65,9 @@ struct alignas(8) D_8_Optimize // 最低使用 4
 
 struct alignas(2) D_2 // 最低使用 2
 {
-    char a; // 1 byte  // 1 byte padding
-    short b;  // 2 bytes
-    char c; // 1 byte // 1 byte padding
+    char a;  // 1 byte  // 1 byte padding
+    short b; // 2 bytes
+    char c;  // 1 byte // 1 byte padding
 };
 
 struct alignas(2) D_2_Optimize // 最低使用 2
@@ -93,6 +93,32 @@ struct E
 
 #pragma endregion 使用 #pragma pack(n) 指定对齐方式
 
+#pragma region 结构体中的空数组
+
+struct F
+{
+    char a;  // 1 byte  // 3 bytes padding
+    int b[]; // 0 byte
+};
+
+struct G
+{
+    int a[0]; // 0 byte
+    char b; // 1 byte   // 3 bytes padding
+};
+
+struct H
+{
+    int b[0]; // 0 byte
+};
+
+struct I
+{
+};
+
+
+#pragma endregion 结构体中的空数组
+
 int main()
 {
     std::cout << "sizeof(char) = " << sizeof(char) << std::endl;
@@ -111,11 +137,18 @@ int main()
     std::cout << "sizeof(B) = " << sizeof(B) << std::endl;
     std::cout << "sizeof(C) = " << sizeof(C) << std::endl;
     std::cout << "sizeof(C_Optimize) = " << sizeof(C_Optimize) << std::endl;
+
     std::cout << "sizeof(D_8) = " << sizeof(D_8) << std::endl;
     std::cout << "sizeof(D_8_Optimize) = " << sizeof(D_8_Optimize) << std::endl;
     std::cout << "sizeof(D_2) = " << sizeof(D_2) << std::endl;
     std::cout << "sizeof(D_2_Optimize) = " << sizeof(D_2_Optimize) << std::endl;
+
     std::cout << "sizeof(E) = " << sizeof(E) << std::endl;
+
+    std::cout << "sizeof(F) = " << sizeof(F) << std::endl;
+    std::cout << "sizeof(G) = " << sizeof(G) << std::endl;
+    std::cout << "sizeof(H) = " << sizeof(H) << std::endl;
+    std::cout << "sizeof(I) = " << sizeof(I) << std::endl;
 
     return 0;
 }
