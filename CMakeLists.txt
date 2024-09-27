@@ -5,3 +5,5 @@ cmake_minimum_required(VERSION 3.26)
 project(CppInterview)
 
 add_subdirectory(Structure)
+
+add_subdirectory(Class)
