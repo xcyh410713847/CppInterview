@@ -8,4 +8,6 @@ add_subdirectory(Array)
 
 add_subdirectory(Structure)
 
+add_subdirectory(Memory)
+
 add_subdirectory(Class)
