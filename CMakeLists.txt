@@ -10,4 +10,6 @@ add_subdirectory(Structure)
 
 add_subdirectory(Memory)
 
+add_subdirectory(static&const)
+
 add_subdirectory(Class)
