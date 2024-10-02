@@ -34,4 +34,27 @@
 
 ### 成员变量
 
+用static修饰类的数据成员实际使其成为类的全局变量，会被类的所有对象共享，包括派生类的对象。
+
+因此，**static成员必须在类外进行初始化，而不能在构造函数内进行初始化。不过也可以用const修饰static数据成员在类内初始化**
+
 ### 成员函数
+
+用static修饰成员函数，使这个类只存在这一份函数，所有对象共享该函数，不含this指针。
+
+静态成员是可以独立访问的，也就是说，无须创建任何对象实例就可以访问。
+
+**不可以同时用const和static修饰成员函数**
+
+```cpp
+static const void func1()
+{
+    std::cout << "static const func" << std::endl;
+}
+
+// 错误，静态成员函数不能加const修饰
+// static void func2() const
+// {
+//     std::cout << "static func2" << std::endl;
+// }
+```
