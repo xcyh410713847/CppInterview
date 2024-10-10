@@ -10,8 +10,12 @@ add_subdirectory(Class)
 
 add_subdirectory(Const)
 
-add_subdirectory(Structure)
-
 add_subdirectory(Memory)
 
+add_subdirectory(Point)
+
+add_subdirectory(Reference)
+
 add_subdirectory(Static)
+
+add_subdirectory(Structure)
