@@ -15,6 +15,10 @@ int main()
     std::cout << "a = " << a << std::endl;
     std::cout << "b = " << b << std::endl;
 
+    // 打印地址
+    std::cout << "&a = " << &a << std::endl;
+    std::cout << "&b = " << &b << std::endl;
+
     b = 20; // b是a的引用，所以这里相当于给a赋值
 
     std::cout << "a = " << a << std::endl;
