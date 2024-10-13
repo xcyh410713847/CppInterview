@@ -13,25 +13,29 @@ int main()
     // 左值引用
     std::string str = "Hello, World!";
     std::string &strRef = str;
+    std::cout << "strRef = " << strRef << std::endl;
 
     // 常量左值引用
     const int &a = 1;
+    std::cout << "a = " << a << std::endl;
     // int &b = 1;      // 错误，不能将右值绑定到非常量左值引用
 
     // 右值引用
     // std::string &&strRRef = str;    // 错误，不能将左值绑定到右值引用
     int &&rrb = 1; // 正确，可以将右值绑定到右值引用
+    std::cout << "rrb = " << rrb << std::endl;
     int i = 1;
     const int &rc = i * 2; // 正确，可以将右值绑定到常量左值引用
+    std::cout << "rc = " << rc << std::endl;
     // int &rc = i * 2; // 错误，i * 2 是一个右值，不能将右值绑定到非常量左值引用
     int &&rrc = i * 2; // 正确，可以将右值绑定到右值引用
+    std::cout << "rrc = " << rrc << std::endl;
 
     /*
         右值引用虽然是引用右值，但是其本身是左值
         右值引用是一个左值，因此不能将右值引用绑定到右值引用
     */
-    int &&rrd = 1;
-    std::cout << "&rrd = " << &rrd << std::endl;
+    std::cout << "&rrb = " << &rrb << std::endl;
 
     // 通过API判断是否是左值引用和右值引用
     std::cout << "strRef is_lvalue_reference " << std::is_lvalue_reference<decltype(strRef)>::value << std::endl;
