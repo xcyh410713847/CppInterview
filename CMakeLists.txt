@@ -19,3 +19,5 @@ add_subdirectory(Reference)
 add_subdirectory(Static)
 
 add_subdirectory(Structure)
+
+add_subdirectory(Variable)
