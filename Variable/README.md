@@ -103,7 +103,6 @@ a > b;
 a && b;
 ```
 
-
 ### 泛左值(glvalue, generalized lvalue)
 
 具名，lvalue和xvalue都属于glvalue
@@ -111,3 +110,21 @@ a && b;
 ### 右值(rvalue, right value)
 
 可被移动的表达式，prvalue和xvalue都属于rvalue
+
+## 引用
+
+在C++11之前，引用分为左值引用和常量左值引用两种，但是自C++11起，引入了右值引用，也就是说，在C++11中，包含如下3中引用：
+
+* 左值引用
+* 常量左值引用(不希望被修改)
+* 右值引用
+
+## 目录说明
+
+### variable-left
+
+左值
+
+### variable-reference
+
+与引用相关的左右值
