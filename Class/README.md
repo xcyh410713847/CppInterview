@@ -41,3 +41,7 @@ this指针会因编译器不同而有不同的放置位置。可能是栈，也�
 ## explicit 关键字
 
 class-explicit
+
+## 友元类和友元函数
+
+class-friend
